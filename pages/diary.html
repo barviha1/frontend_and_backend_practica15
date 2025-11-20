@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дневник - StudentDev Portfolio</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body class="page">
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <h1 class="header__title">Корецкий Ренат</h1>
+                <p class="header__subtitle">Студент-разработчик</p>
+            </div>
+        </div>
+    </header>
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="../index.html" class="nav__link">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a href="projects.html" class="nav__link">Проекты</a>
+                </li>
+                <li class="nav__item nav__item--active">
+                    <a href="diary.html" class="nav__link">Дневник</a>
+                </li>
+                <li class="nav__item">
+                    <a href="contacts.html" class="nav__link">Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <h2 class="section-title">Дневник обучения</h2>
+            <div class="timeline">
+                <div class="timeline__item">
+                    <div class="timeline__date">15.01.2025</div>
+                    <div class="timeline__content">
+                        <h3 class="timeline__title">Завершил курс по адаптивной верстке</h3>
+                        <p class="timeline__description">
+                            Изучил медиа-запросы, Flexbox, CSS Grid и современные подходы к созданию адаптивных интерфейсов. Создал несколько практических проектов.
+                        </p>
+                        <span class="timeline__status timeline__status--completed">Завершено</span>
+                        <button class="delete-btn" onclick="deleteEntry(this)">
+                            <img src="../images/trash.svg" alt="trash" style="height: 30px;">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="timeline__item">
+                    <div class="timeline__date">10.02.2025</div>
+                    <div class="timeline__content">
+                        <h3 class="timeline__title">Работа над интернет-магазином</h3>
+                        <p class="timeline__description">
+                            Разрабатываю функционал корзины товаров и систему фильтрации. Изучаю работу с состоянием в React.
+                        </p>
+                        <span class="timeline__status timeline__status--in-progress">В процессе</span>
+                        <button class="delete-btn" onclick="deleteEntry(this)">
+                            <img src="../images/trash.svg" alt="trash" style="height: 30px;">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="timeline__item">
+                    <div class="timeline__date">01.03.2025</div>
+                    <div class="timeline__content">
+                        <h3 class="timeline__title">Изучение Node.js и Express</h3>
+                        <p class="timeline__description">
+                            Начал изучение бэкенд-разработки. Планирую создать REST API для своего портфолио.
+                        </p>
+                        <span class="timeline__status timeline__status--in-progress">В процессе</span>
+                        <button class="delete-btn" onclick="deleteEntry(this)">
+                            <img src="../images/trash.svg" alt="trash" style="height: 30px;">
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="timeline__item">
+                    <div class="timeline__date">01.04.2025</div>
+                    <div class="timeline__content">
+                        <h3 class="timeline__title">Курс по продвинутому JavaScript</h3>
+                        <p class="timeline__description">
+                            Планирую углубить знания в асинхронном программировании, паттернах проектирования и оптимизации.
+                        </p>
+                        <span class="timeline__status timeline__status--planned">Запланировано</span>
+                        <button class="delete-btn" onclick="deleteEntry(this)">
+                            <img src="../images/trash.svg" alt="trash" style="height: 30px;">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <section class="courses">
+                <h3 class="courses__title">Прогресс по курсам</h3>
+                <div class="courses__grid">
+                    <div class="course">
+                        <div class="course__header">
+                            <span class="course__name">HTML/CSS </span>
+                            <span class="course__percent">90%</span>
+                        </div>
+                        <div class="course__progress">
+                            <div class="course__progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="course">
+                        <div class="course__header">
+                            <span class="course__name">JavaScript</span>
+                            <span class="course__percent">80%</span>
+                        </div>
+                        <div class="course__progress">
+                            <div class="course__progress-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div class="course">
+                        <div class="course__header">
+                            <span class="course__name">Bootstrap</span>
+                            <span class="course__percent">85%</span>
+                        </div>
+                        <div class="course__progress">
+                            <div class="course__progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="course">
+                        <div class="course__header">
+                            <span class="course__name">React</span>
+                            <span class="course__percent">60%</span>
+                        </div>
+                        <div class="course__progress">
+                            <div class="course__progress-bar" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="add-entry">
+                <h3 class="add-entry__title">Добавить запись</h3>
+                <form class="add-entry__form">
+                    <div class="form-group">
+                        <label class="form-label">Дата</label>
+                        <input type="date" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Заголовок</label>
+                        <input type="text" class="form-input" placeholder="Что вы изучили сегодня?" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Описание</label>
+                        <textarea class="form-textarea" placeholder="Опишите ваш прогресс..." rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Статус</label>
+                        <select class="form-input" required>
+                            <option value="">Выберите статус</option>
+                            <option value="completed">Завершено</option>
+                            <option value="in-progress">В процессе</option>
+                            <option value="planned">Запланировано</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="button button--primary">Добавить запись</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <p class="footer__copyright">&copy; 2025 StudentDev Portfolio</p>
+                <div class="footer__links">
+                    <a href="mailto:student@edu.ru" class="footer__link">renat.koretskiy.90@mail.ru</a>
+                    <a href="https://github.com/barviha1" class="footer__link">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../scripts/diary.js"></script>
+</body>
+</html>

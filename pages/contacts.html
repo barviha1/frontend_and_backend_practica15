@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - StudentDev Portfolio</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body class="page">
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <h1 class="header__title">Корецкий Ренат</h1>
+                <p class="header__subtitle">Студент-разработчик</p>
+            </div>
+        </div>
+    </header>
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="../index.html" class="nav__link">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a href="projects.html" class="nav__link">Проекты</a>
+                </li>
+                <li class="nav__item">
+                    <a href="diary.html" class="nav__link">Дневник</a>
+                </li>
+                <li class="nav__item nav__item--active">
+                    <a href="contacts.html" class="nav__link">Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main">
+        <div class="container">
+            <h2 class="section-title">Свяжитесь со мной</h2>
+
+            <div class="contacts__content">
+                <section class="contact-form">
+                    <h3 class="contact-info__title">Напишите мне</h3>
+                    <form class="form">
+                        <div class="form__group">
+                            <label class="form__label">Имя</label>
+                            <input type="text" class="form__input" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label">Email</label>
+                            <input type="email" class="form__input" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label">Тема</label>
+                            <input type="text" class="form__input" placeholder="Тема сообщения" required>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label">Сообщение</label>
+                            <textarea class="form__textarea" placeholder="Ваше сообщение..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="button button--primary form__button">Отправить сообщение</button>
+                    </form>
+                </section>
+                <section class="contact-info">
+                    <h3 class="contact-info__title">Мои контакты</h3>
+                    <div class="contact-info__items">
+                        <div class="contact-item">
+                            <div class="contact-item__icon">📧</div>
+                            <div class="contact-item__content">
+                                <h4 class="contact-item__title">Email</h4>
+                                <p class="contact-item__value">renat.koretskiy.90@mail.ru</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item__icon">📱</div>
+                            <div class="contact-item__content">
+                                <h4 class="contact-item__title">Телефон</h4>
+                                <p class="contact-item__value">+7 (951) 062-79-61</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item__icon">💼</div>
+                            <div class="contact-item__content">
+                                <h4 class="contact-item__title">GitHub</h4>
+                                <p class="contact-item__value">github.com/barviha1</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item__icon">💬</div>
+                            <div class="contact-item__content">
+                                <h4 class="contact-item__title">Telegram</h4>
+                                <p class="contact-item__value">@velvetheaven666</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item__icon">🏢</div>
+                            <div class="contact-item__content">
+                                <h4 class="contact-item__title">Местоположение</h4>
+                                <p class="contact-item__value">Москва, Россия</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <p class="footer__copyright">&copy; 2025 StudentDev Portfolio</p>
+                <div class="footer__links">
+                    <a href="mailto:student@edu.ru" class="footer__link">renat.koretskiy.90@mail.ru</a>
+                    <a href="https://github.com/barviha1" class="footer__link">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../scripts/contacts.js"></script>
+</body>
+</html>

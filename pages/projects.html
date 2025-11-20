@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты - Портфолио</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body class="page">
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <h1 class="header__title">Корецкий Ренат</h1>
+                <p class="header__subtitle">Студент-разработчик</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li>
+                <li class="nav__item nav__item--active"><a href="projects.html" class="nav__link">Проекты</a></li>
+                <li class="nav__item"><a href="diary.html" class="nav__link">Дневник</a></li>
+                <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main">
+        <section class="projects">
+            <div class="container">
+                <div class="projects__header">
+                    <h2 class="section-title">Мои проекты</h2>
+                    <div class="projects__filters">
+                        <button class="filter filter--active" data-filter="all">Все</button>
+                        <button class="filter" data-filter="html">HTML</button>
+                        <button class="filter" data-filter="js">JS</button>
+                        <button class="filter" data-filter="react">React</button>
+                        <button class="filter" data-filter="bootstrap">Bootstrap</button>
+                    </div>
+                </div>
+                
+                <div class="projects__grid" id="projects-grid">
+                    <div class="project-card" data-category="html" onclick="openModal('modal-personal-site')">
+                        <div class="project-card__image">
+                            <img src="../images/2.svg" alt="Личный сайт" style="height: 200px; width: 200px; margin-left: 100px;">
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Личный сайт</h3>
+                            <p class="project-card__description">Статический веб-сайт с адаптивным дизайном и современными CSS-техниками</p>
+                            <div class="project-card__tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                            </div>
+                            <button class="button button--primary">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="js" onclick="openModal('modal-todo')">
+                        <div class="project-card__image">
+                            <img src="../images/3.svg" alt="To do" style="height: 200px; width: 200px; margin-left: 100px;">
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Todo-приложение</h3>
+                            <p class="project-card__description">Интерактивное приложение для управления задачами на чистом JavaScript</p>
+                            <div class="project-card__tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                            </div>
+                            <button class="button button--primary">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="react" onclick="openModal('modal-ecommerce')">
+                        <div class="project-card__image">
+                            <img src="../images/4.svg" alt="Интернет-магазин" style="height: 200px; width: 200px; margin-left: 100px;">
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Интернет-магазин</h3>
+                            <p class="project-card__description">React приложение с использованием современных хуков и управлением состоянием</p>
+                            <div class="project-card__tags">
+                                <span class="tag">React</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">CSS Modules</span>
+                            </div>
+                            <button class="button button--primary">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="bootstrap" onclick="openModal('modal-portfolio')">
+                        <div class="project-card__image">
+                            <img src="../images/5.svg" alt="Портфолио" style="height: 150px; width: 150px; margin-left: 100px; margin-top: 50px;">
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Портфолио</h3>
+                            <p class="project-card__description">Адаптивный веб-сайт, построенный на фреймворке Bootstrap</p>
+                            <div class="project-card__tags">
+                                <span class="tag">Bootstrap</span>
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                            </div>
+                            <button class="button button--primary">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__content">
+                    <p class="footer__copyright">&copy; 2025 StudentDev Portfolio</p>
+                    <div class="footer__links">
+                        <a href="mailto:student@edu.ru" class="footer__link">renat.koretskiy.90@mail.ru</a>
+                        <a href="https://github.com/barviha1" class="footer__link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    <div id="modal-personal-site" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-personal-site')">&times;</span>
+            <h2>Личный сайт</h2>
+            <div class="project-gallery">
+                <div class="gallery-main">
+                    <img src="../images/portfolio1.png" alt="Личный сайт - Главная страница">
+                </div>
+                <div class="gallery-thumbnails"></div>
+            </div>
+            
+            <div class="modal-body">
+                <p>Статический веб-сайт, созданный с использованием HTML и CSS.</p>
+                <div class="project-technologies">
+                    <h4>Технологии:</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                    </div>
+                </div>
+                <div class="modal-links">
+                    <a href="https://barviha1.github.io/frontend_and_backend_practica2/" class="btn button button--primary" target="_blank">🌐 Живая версия</a>
+                    <a href="https://github.com/barviha1/frontend_and_backend_practica2" class="btn button button--outline" target="_blank">💻 Исходный код</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-todo" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-todo')">&times;</span>
+            <h2>Todo-приложение</h2>
+            <div class="project-gallery">
+                <div class="gallery-main">
+                    <img src="../images/portfolio2.png" style="height: 300px;" alt="Todo приложение">
+                </div>
+                <div class="gallery-thumbnails"></div>
+            </div>
+            
+            <div class="modal-body">
+                <p>Интерактивное приложение на JavaScript для управления задачами</p>
+                <div class="project-technologies">
+                    <h4>Технологии:</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">CSS3</span>
+                    </div>
+                </div>
+                <div class="modal-links">
+                    <a href="https://barviha1.github.io/frontend_and_backend_practica13-14/pages/diary.html" class="btn button button--primary" target="_blank">🌐 Живая версия</a>
+                    <a href="https://github.com/barviha1/frontend_and_backend_practica13-14" class="btn button button--outline" target="_blank">💻 Исходный код</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-ecommerce" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-ecommerce')">&times;</span>
+            <h2>Интернет-магазин</h2>
+            
+            <div class="project-gallery">
+                <div class="gallery-main">
+                    <img src="../images/portfolio3.png" alt="Интернет-магазин - Каталог">
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <p>Приложение на React с использованием современных хуков, управления состоянием и взаимодействием с API. Включает каталог товаров, корзину и систему фильтрации.</p>
+                <div class="project-technologies">
+                    <h4>Технологии:</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">CSS Modules</span>
+                    </div>
+                </div>       
+                <div class="modal-links">
+                    <a href="https://barviha1.github.io/frontend_and_backend_Bootstrap/pages/goods.html" class="btn button button--primary" target="_blank">🌐 Живая версия</a>
+                    <a href="https://barviha1.github.io/frontend_and_backend_Bootstrap/" class="btn button button--outline" target="_blank">💻 Исходный код</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-portfolio" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-portfolio')">&times;</span>
+            <h2>Портфолио</h2>
+            <div class="project-gallery">
+                <div class="gallery-main">
+                    <img src="../images/portfolio4.png" alt="Портфолио - Главная">
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <p>Адаптивный веб-сайт, построенный на фреймворке Bootstrap. Включает сеточную систему, компоненты Bootstrap и кастомные стили.</p>
+                <div class="project-technologies">
+                    <h4>Технологии:</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="modal-links">
+                    <a href="https://barviha1.github.io/frontend_and_backend_Bootstrap/" class="btn button button--primary" target="_blank">🌐 Живая версия</a>
+                    <a href="https://barviha1.github.io/frontend_and_backend_Bootstrap/" class="btn button button--outline" target="_blank">💻 Исходный код</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/projects.js"></script>
+</body>
+</html>
