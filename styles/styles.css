@@ -615,7 +615,6 @@ body {
     border-radius: var(--radius-md);
     font-family: inherit;
     font-size: 1rem;
-    transition: var(--transition);
 }
 
 .form__input:focus,
@@ -1307,5 +1306,278 @@ img {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+picture {
+    display: block;
+    width: 100%;
+}
+
+.project-card__image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-main img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.hero__photo {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: var(--shadow-lg);
+}
+
+
+.image-cover {
+    object-fit: cover;
+}
+
+.image-contain {
+    object-fit: contain;
+}
+
+.image-fill {
+    object-fit: fill;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero__photo {
+        border-width: 3px;
+    }
+}
+
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+@media print {
+    .project-card__image img,
+    .hero__photo,
+    .gallery-main img {
+        max-width: 150px !important;
+        height: auto !important;
+        page-break-inside: avoid;
+    }
+    
+    picture {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .project-card__image img,
+    .gallery-main img {
+        will-change: transform;
+    }
+}
+
+@media (prefers-contrast: high) {
+    .hero__photo {
+        border-color: #000;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card__image img,
+    .gallery-main img {
+        transition: none;
+    }
+    
+    .project-card:hover .project-card__image img {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+    .hero__photo {
+        max-width: 150px;
+    }
+    
+    .project-card__image {
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero__photo {
+        max-width: 120px;
+    }
+}
+
+
+@media (prefers-reduced-data: reduce) {
+    .project-card__image img,
+    .hero__photo {
+        filter: blur(0.5px); 
+    }
+}
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    z-index: 10000;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.form__fieldset {
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    background: #f8fafc;
+}
+
+.form__legend {
+    font-weight: 600;
+    color: var(--text-primary);
+    padding: 0 var(--space-sm);
+
+}
+
+.form__group {
+    margin-bottom: var(--space-lg);
+}
+
+.form__label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.required-indicator {
+    color: var(--error-color);
+    font-weight: bold;
+}
+
+.form__input:focus,
+.form__textarea:focus,
+.form__checkbox:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.form__hint {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-top: var(--space-xs);
+}
+
+.form__error {
+    font-size: 0.875rem;
+    color: var(--error-color);
+    margin-top: var(--space-xs);
+    font-weight: 500;
+}
+
+.form__input:invalid:not(:focus):not(:placeholder-shown),
+.form__textarea:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: var(--error-color);
+}
+
+.form__checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+}
+
+.form__checkbox {
+    margin-top: 0.25rem;
+}
+
+.form__checkbox-label {
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.form__required-note {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: var(--space-lg);
+    text-align: center;
+}
+
+.contact-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-link:hover,
+.contact-link:focus {
+    color: var(--primary-dark);
+    text-decoration: underline;
+    outline: none;
+}
+
+.nav__link:focus,
+.button:focus,
+.contact-link:focus,
+.footer__link:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.form__input:disabled,
+.form__textarea:disabled {
+    background-color: #f1f5f9;
+    color: var(--text-light);
+    cursor: not-allowed;
+}
+
+.form__input,
+.form__checkbox {
+    transition: all 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skip-link,
+    .form__input,
+    .form__textarea,
+    .form__checkbox,
+    .contact-link {
+        transition: none;
     }
 }

@@ -13,8 +13,6 @@ function initFilters() {
             this.classList.add('filter--active');
             
             const filter = this.getAttribute('data-filter');
-            console.log('Применяем фильтр:', filter);
-
             projectCards.forEach(card => {
                 const category = card.getAttribute('data-category');
                 
@@ -29,7 +27,6 @@ function initFilters() {
 }
 
 function initModals() {
-    console.log('Инициализация модальных окон...');
     document.querySelectorAll('.modal .close').forEach(closeBtn => {
         closeBtn.addEventListener('click', function() {
             const modal = this.closest('.modal');
@@ -59,7 +56,6 @@ function initModals() {
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     if (!modal) {
-        console.error('Модальное окно не найдено:', modalId);
         return;
     }
     
@@ -70,7 +66,6 @@ function openModal(modalId) {
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     if (!modal) {
-        console.error('Модальное окно не найдено для закрытия:', modalId);
         return;
     }
     

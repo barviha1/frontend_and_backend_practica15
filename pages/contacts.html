@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body class="page">
-    <header class="header">
+    <a href="#main-content" class="skip-link">Перейти к основному содержанию</a>
+    
+    <header class="header" role="banner">
         <div class="container">
             <div class="header__content">
                 <h1 class="header__title">Корецкий Ренат</h1>
@@ -15,7 +17,8 @@
             </div>
         </div>
     </header>
-    <nav class="nav">
+
+    <nav class="nav" role="navigation" aria-label="Основная навигация">
         <div class="container">
             <ul class="nav__list">
                 <li class="nav__item">
@@ -28,75 +31,197 @@
                     <a href="diary.html" class="nav__link">Дневник</a>
                 </li>
                 <li class="nav__item nav__item--active">
-                    <a href="contacts.html" class="nav__link">Контакты</a>
+                    <a href="contacts.html" class="nav__link" aria-current="page">Контакты</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <main class="main">
+
+    <main id="main-content" class="main" role="main" tabindex="-1">
         <div class="container">
             <h2 class="section-title">Свяжитесь со мной</h2>
 
             <div class="contacts__content">
-                <section class="contact-form">
-                    <h3 class="contact-info__title">Напишите мне</h3>
-                    <form class="form">
+                <section class="contact-form" aria-labelledby="contact-form-title">
+                    <h3 id="contact-form-title" class="contact-info__title">Напишите мне</h3>
+                    
+                    <form class="form" id="contact-form" novalidate>
+                        <fieldset class="form__fieldset">
+                            <legend class="form__legend">Контактная информация</legend>
+                            
+                            <div class="form__group">
+                                <label for="user-name" class="form__label">
+                                    Имя
+                                    <span class="required-indicator" aria-hidden="true">*</span>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="user-name" 
+                                    class="form__input" 
+                                    placeholder="Ваше имя" 
+                                    required
+                                    aria-required="true"
+                                    aria-describedby="name-hint"
+                                >
+                                <div id="name-hint" class="form__hint" aria-live="polite">
+                                    Пожалуйста, введите ваше полное имя
+                                </div>
+                                <div id="name-error" class="form__error" aria-live="assertive" role="alert"></div>
+                            </div>
+
+                            <div class="form__group">
+                                <label for="user-email" class="form__label">
+                                    Email
+                                    <span class="required-indicator" aria-hidden="true">*</span>
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="user-email" 
+                                    class="form__input" 
+                                    placeholder="your@email.com" 
+                                    required
+                                    aria-required="true"
+                                    aria-describedby="email-hint email-error"
+                                >
+                                <div id="email-hint" class="form__hint" aria-live="polite">
+                                    Мы не передаем ваш email третьим лицам
+                                </div>
+                                <div id="email-error" class="form__error" aria-live="assertive" role="alert"></div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__fieldset">
+                            <legend class="form__legend">Сообщение</legend>
+                            
+                            <div class="form__group">
+                                <label for="message-subject" class="form__label">
+                                    Тема
+                                    <span class="required-indicator" aria-hidden="true">*</span>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="message-subject" 
+                                    class="form__input" 
+                                    placeholder="Тема сообщения" 
+                                    required
+                                    aria-required="true"
+                                    aria-describedby="subject-error"
+                                >
+                                <div id="subject-error" class="form__error" aria-live="assertive" role="alert"></div>
+                            </div>
+
+                            <div class="form__group">
+                                <label for="message-text" class="form__label">
+                                    Сообщение
+                                    <span class="required-indicator" aria-hidden="true">*</span>
+                                </label>
+                                <textarea 
+                                    id="message-text" 
+                                    class="form__textarea" 
+                                    placeholder="Ваше сообщение..." 
+                                    rows="5" 
+                                    required
+                                    aria-required="true"
+                                    aria-describedby="message-hint message-error"
+                                ></textarea>
+                                <div id="message-hint" class="form__hint" aria-live="polite">
+                                    Опишите подробно ваш вопрос или предложение
+                                </div>
+                                <div id="message-error" class="form__error" aria-live="assertive" role="alert"></div>
+                            </div>
+                        </fieldset>
+
                         <div class="form__group">
-                            <label class="form__label">Имя</label>
-                            <input type="text" class="form__input" placeholder="Ваше имя" required>
+                            <div class="form__checkbox-group">
+                                <input 
+                                    type="checkbox" 
+                                    id="privacy-consent" 
+                                    class="form__checkbox" 
+                                    required
+                                    aria-required="true"
+                                    aria-describedby="privacy-error"
+                                >
+                                <label for="privacy-consent" class="form__checkbox-label">
+                                    Я соглашаюсь с обработкой персональных данных
+                                    <span class="required-indicator" aria-hidden="true">*</span>
+                                </label>
+                            </div>
+                            <div id="privacy-error" class="form__error" aria-live="assertive" role="alert"></div>
+                            <div id="privacy-hint" class="form__hint" aria-live="polite">
+                                Без согласия с обработкой персональных данных отправка формы невозможна
+                            </div>
                         </div>
-                        <div class="form__group">
-                            <label class="form__label">Email</label>
-                            <input type="email" class="form__input" placeholder="your@email.com" required>
+
+                        <div class="form__required-note">
+                            <span class="required-indicator" aria-hidden="true">*</span>
+                            <span class="sr-only">Обязательные поля</span>
+                            - обязательные для заполнения поля
                         </div>
-                        <div class="form__group">
-                            <label class="form__label">Тема</label>
-                            <input type="text" class="form__input" placeholder="Тема сообщения" required>
+
+                        <button 
+                            type="submit" 
+                            class="button button--primary form__button"
+                            aria-describedby="submit-hint"
+                        >
+                            Отправить сообщение
+                        </button>
+                        <div id="submit-hint" class="form__hint">
+                            После отправки формы вы получите подтверждение на email
                         </div>
-                        <div class="form__group">
-                            <label class="form__label">Сообщение</label>
-                            <textarea class="form__textarea" placeholder="Ваше сообщение..." rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="button button--primary form__button">Отправить сообщение</button>
                     </form>
                 </section>
-                <section class="contact-info">
-                    <h3 class="contact-info__title">Мои контакты</h3>
-                    <div class="contact-info__items">
-                        <div class="contact-item">
-                            <div class="contact-item__icon">📧</div>
+
+                <section class="contact-info" aria-labelledby="contact-info-title">
+                    <h3 id="contact-info-title" class="contact-info__title">Мои контакты</h3>
+                    <div class="contact-info__items" role="list">
+                        <div class="contact-item" role="listitem">
+                            <div class="contact-item__icon" aria-hidden="true">📧</div>
                             <div class="contact-item__content">
                                 <h4 class="contact-item__title">Email</h4>
-                                <p class="contact-item__value">renat.koretskiy.90@mail.ru</p>
+                                <p class="contact-item__value">
+                                    <a href="mailto:renat.koretskiy.90@mail.ru" class="contact-link">
+                                        renat.koretskiy.90@mail.ru
+                                    </a>
+                                </p>
                             </div>
                         </div>
 
-                        <div class="contact-item">
-                            <div class="contact-item__icon">📱</div>
+                        <div class="contact-item" role="listitem">
+                            <div class="contact-item__icon" aria-hidden="true">📱</div>
                             <div class="contact-item__content">
                                 <h4 class="contact-item__title">Телефон</h4>
-                                <p class="contact-item__value">+7 (951) 062-79-61</p>
+                                <p class="contact-item__value">
+                                    +7 (951) 062-79-61
+                                </p>
                             </div>
                         </div>
 
-                        <div class="contact-item">
-                            <div class="contact-item__icon">💼</div>
+                        <div class="contact-item" role="listitem">
+                            <div class="contact-item__icon" aria-hidden="true">💼</div>
                             <div class="contact-item__content">
                                 <h4 class="contact-item__title">GitHub</h4>
-                                <p class="contact-item__value">github.com/barviha1</p>
+                                <p class="contact-item__value">
+                                    <a href="https://github.com/barviha1" class="contact-link" target="_blank" rel="noopener noreferrer">
+                                        github.com/barviha1
+                                    </a>
+                                </p>
                             </div>
                         </div>
 
-                        <div class="contact-item">
-                            <div class="contact-item__icon">💬</div>
+                        <div class="contact-item" role="listitem">
+                            <div class="contact-item__icon" aria-hidden="true">💬</div>
                             <div class="contact-item__content">
                                 <h4 class="contact-item__title">Telegram</h4>
-                                <p class="contact-item__value">@velvetheaven666</p>
+                                <p class="contact-item__value">
+                                    <a href="https://t.me/velvetheaven666" class="contact-link" target="_blank" rel="noopener noreferrer">
+                                        @velvetheaven666
+                                    </a>
+                                </p>
                             </div>
                         </div>
 
-                        <div class="contact-item">
-                            <div class="contact-item__icon">🏢</div>
+                        <div class="contact-item" role="listitem">
+                            <div class="contact-item__icon" aria-hidden="true">🏢</div>
                             <div class="contact-item__content">
                                 <h4 class="contact-item__title">Местоположение</h4>
                                 <p class="contact-item__value">Москва, Россия</p>
@@ -107,17 +232,19 @@
             </div>
         </div>
     </main>
-    <footer class="footer">
+
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer__content">
                 <p class="footer__copyright">&copy; 2025 StudentDev Portfolio</p>
                 <div class="footer__links">
-                    <a href="mailto:student@edu.ru" class="footer__link">renat.koretskiy.90@mail.ru</a>
-                    <a href="https://github.com/barviha1" class="footer__link">GitHub</a>
+                    <a href="mailto:renat.koretskiy.90@mail.ru" class="footer__link">renat.koretskiy.90@mail.ru</a>
+                    <a href="https://github.com/barviha1" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
         </div>
     </footer>
+
     <script src="../scripts/contacts.js"></script>
 </body>
 </html>

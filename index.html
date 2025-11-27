@@ -39,10 +39,14 @@
                 <section class="hero">
                     <div class="hero__content">
                         <div class="hero__image">
-                            <img src="images/121.jpg" alt="Фото студента" class="hero__photo">
+                            <picture>
+                                <source srcset="images/121.webp" type="image/webp">
+                                <source srcset="images/121.jpg" type="image/jpeg">
+                                <img src="images/121.jpg" alt="Фото студента" class="hero__photo" loading="lazy">
+                            </picture>
                         </div>
                         <div class="hero__info">
-                            <h2 class="hero__greeting">Привет! Я студент</h2>
+                            <h2 class="hero__greeting">Привет! Я студент группы ЭФБО 07-24</h2>
                             <p class="hero__description">
                                 Факультет информационных технологий, группа ЭФБО 07-24<br>
                                 Увлекаюсь веб-разработкой и созданием современных интерфейсов
@@ -92,57 +96,86 @@
                     </div>
                 </section>
 
-                <section class="projects-preview">
-                    <h2 class="section-title">Лучшие проекты</h2>
-                    <div class="projects-preview__grid">
-                        <article class="project-card">
-                            <div class="project-card__image">
-                                <img src="images/1.png" alt="Личный сайт">
-                            </div>
-                            <div class="project-card__content">
-                                <h3 class="project-card__title">Личный сайт</h3>
-                                <p class="project-card__description">
-                                    Адаптивный сайт-портфолио на HTML и CSS
-                                </p>
-                                <div class="project-card__tags">
-                                    <span class="tag">HTML</span>
-                                    <span class="tag">CSS</span>
-                                    <span class="tag">JavaScript</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="project-card">
-                            <div class="project-card__image">
-                                <img src="images/2.png" alt="Todo приложение">
-                            </div>
-                            <div class="project-card__content">
-                                <h3 class="project-card__title">Todo приложение</h3>
-                                <p class="project-card__description">
-                                    Приложение для управления задачами
-                                </p>
-                                <div class="project-card__tags">
-                                    <span class="tag">JavaScript</span>
-                                    <span class="tag">LocalStorage</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="project-card">
-                            <div class="project-card__image">
-                                <img src="images/3.png" alt="Интернет-магазин">
-                            </div>
-                            <div class="project-card__content">
-                                <h3 class="project-card__title">Интернет-магазин</h3>
-                                <p class="project-card__description">
-                                    Прототип магазина с корзиной товаров
-                                </p>
-                                <div class="project-card__tags">
-                                    <span class="tag">React</span>
-                                    <span class="tag">API</span>
-                                </div>
-                            </div>
-                        </article>
+    <section class="projects-preview">
+        <h2 class="section-title">Лучшие проекты</h2>
+        <div class="projects-preview__grid">
+            <article class="project-card">
+                <div class="project-card__image">
+                    <div class="image-overlay">
                     </div>
-                </section>
+                    <picture>
+                        <source srcset="images/1.webp" type="image/webp">
+                        <source srcset="images/1.png" type="image/png">
+                        <img src="images/1.png" alt="Личный сайт" loading="lazy">
+                    </picture>
+                </div>
+                <div class="project-card__content">
+                    <h3 class="project-card__title">Личный сайт</h3>
+                    <p class="project-card__description">
+                        Адаптивный сайт-портфолио на HTML и CSS
+                    </p>
+                    <div class="project-card__tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <div class="project-card__links">
+                        <a href="https://barviha1.github.io/frontend_and_backend_practica2/" class="project-link">Подробнее →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-card__image">
+                    <div class="image-overlay">
+                    </div>
+                    <picture>
+                        <source srcset="images/2.webp" type="image/webp">
+                        <source srcset="images/2.png" type="image/png">
+                        <img src="images/2.png" alt="Todo приложение" loading="lazy">
+                    </picture>
+                </div>
+                <div class="project-card__content">
+                    <h3 class="project-card__title">Todo приложение</h3>
+                    <p class="project-card__description">
+                        Приложение для управления задачами
+                    </p>
+                    <div class="project-card__tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">LocalStorage</span>
+                    </div>
+                    <div class="project-card__links">
+                        <a href="https://barviha1.github.io/frontend_and_backend_practica13-14/pages/diary.html" class="project-link">Подробнее →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-card__image">
+                    <div class="image-overlay">
+                    </div>
+                    <picture>
+                        <source srcset="images/3.webp" type="image/webp">
+                        <source srcset="images/3.png" type="image/png">
+                        <img src="images/3.png" alt="Интернет-магазин" loading="lazy">
+                    </picture>
+                </div>
+                <div class="project-card__content">
+                    <h3 class="project-card__title">Интернет-магазин</h3>
+                    <p class="project-card__description">
+                        Прототип магазина с корзиной товаров
+                    </p>
+                    <div class="project-card__tags">
+                        <span class="tag">React</span>
+                        <span class="tag">API</span>
+                    </div>
+                    <div class="project-card__links">
+                        <a href="https://barviha1.github.io/frontend_and_backend_Bootstrap/pages/goods.html" class="project-link">Подробнее →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
             </div>
         </main>
         <footer class="footer">
@@ -157,5 +190,6 @@
             </div>
         </footer>
     </div>
+    <script src="scripts/image-optimization.js"></script>
 </body>
 </html>
